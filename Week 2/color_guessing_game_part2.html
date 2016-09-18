@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Guess the Color Game</title>
+</head>
+
+<body onload="do_game()">
+    <script>
+        colors=["aqua", "beige", "black","indigo","lime","navy","purple", "red","yellow"];
+        function do_game(){
+            var max = colors.length - 1;
+            var color = colors[Math.floor(Math.random() * max)];
+            var finished = false;
+            var count = 0;
+            while (!finished) {
+                count++;
+                var playerChoice = prompt("I am thinking of one of these colors: \n \n".concat(colors.toString()).concat("\n\n")
+                        .concat("What color am I thinking of?"), "");
+                var results = check_guess(playerChoice, color);
+                if (results[0] == false){
+                    alert("You are incorrect\n".concat(results[1]))
+                }
+                else {
+                    var numberOfGuesses = count.toString();
+                    alert("You are correct!\nColor was: ".concat(color).concat("\nIt took you ").concat(numberOfGuesses)
+                            .concat(" guesses."));
+                    finished = true;
+                }
+            }
+        }
+
+        function check_guess(playerChoice, color){
+            if (colors.indexOf(playerChoice)>=0){
+                if (playerChoice > color) {
+                    return [false, "Your color is alphabetically higher than mine."]
+                }
+                else if (playerChoice < color) {
+                    return [false, "Your color is alphabetically lower than mine."]
+                }
+                else {
+                    document.body.style.background = color;
+                    return [true, "You are correct!"]
+                }
+
+            }
+            else {
+                return [false, "You color is not among colors to guess."]
+            }
+        }
+    </script>
+
+</body>
+</html>

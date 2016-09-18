@@ -1,0 +1,46 @@
+ON EVENT
+=========
+<body onload ="alert('Hello!')>
+* more JS in one separated with ;
+
+* alert
+* prompt
+
+FUNCTIONS
+=========
+function do_something(arguments) {
+    code
+    return
+}
+
+<script> </script>
+<body onload = "do_something()">
+
+parseInt()
+
+CONDITIONS
+==========
+if (condition) {
+
+}
+
+if (conditions)
+else
+    code
+
+if (condition)
+else if (condition)
+else
+    code
+
+switch (variable_name) {
+    case "option": do_something();
+                   break;
+}
+
+LOOPS
+=====
+while - 0 - n times
+do while - at least once
+
+indexOf("text") - returns position in string

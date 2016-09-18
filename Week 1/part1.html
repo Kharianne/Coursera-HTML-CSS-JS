@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>"Dating site!"</title>
+</head>
+<body>
+    <form action="https://ihome.ust.hk/~rossiter/cgi-bin/show_everything.php" enctype="multipart/form-data" method="post">
+        <h1>Please Enter Your Details For Our Dating Website!</h1>
+        <fieldset>
+            <legend>Your face</legend>
+                <label for="avatar">Your image:</label>
+                <input type="file" id="avatar" name="avatar" required> <br>
+                <label for="preview">Image preview:</label>
+                <img id="preview">
+        </fieldset>
+        <fieldset>
+            <legend>Your general details</legend>
+            <label for="name">Name: </label>
+            <input type="text" name="name" id="name" required> <br>
+                <div id="gender">
+                    <label for="gender">Gender:</label>
+                    <label for="male">Male</label>
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="female">Female</label>
+                    <input type="radio" id ="female" name="gender" value="female" required> <br>
+                </div>
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required> <br>
+            <label for="date">Date of birth:</label>
+            <input type="date" id="date" name="date"> <br>
+            <label for="color">Favorite color:</label>
+            <input type="color" id="color" name="color"> <br>
+            <label for="country">Which country</label>
+            <select id="country" name="country">
+                <option value="Null">No selection</option>
+                <option value="CZ">Czech Republic</option>
+                <option value="USA">United States of America</option>
+                <option value="UK">United Kingdom</option>
+                <option value="SVK">Slovakia</option>
+                <option value="PL">Poland</option>
+            </select>
+        </fieldset>
+        <fieldset>
+            <legend>Your indicators</legend>
+            <label for="range">Height:</label>
+            Short <input type="range" id="range" name="range" min="0" max="100"> Tall <br>
+            <label for="salary">Salary:</label>
+            Poor <input type="range" id="salary" name="salary" min="0" max="100"> Rich
+
+        </fieldset>
+        <fieldset>
+            <legend>Your contact information</legend>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required> <br>
+            <label for="tel">Mobile:</label>
+            <input type="tel" id="tel" name="tel"> <br>
+            <label for="address">Address:</label>
+            <textarea id="address" name="address"></textarea> <br>
+            <div id="contactMethod">
+                <label for="contactMethod">Method to contact you:</label>
+                <label for="emailOption">Email</label>
+                <input type="checkbox" id="emailOption" name="contactMethod" value="email">
+                <label for="whatsapp">Whatsapp</label>
+                <input type="checkbox" id="whatsapp" name="contactMethod" value="whatsapp">
+                <label for="in-app">In-app chat</label>
+                <input type="checkbox" id="in-app"name="contactMethod" value="chat"> <br>
+            </div>
+        </fieldset>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

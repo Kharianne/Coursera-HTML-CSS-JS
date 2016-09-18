@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Guess the Color Game</title>
+</head>
+
+<body onload="do_game()">
+<script>
+    colors=["aqua", "beige", "black","indigo","lime","navy","purple", "red","yellow"];
+    function do_game(){
+        var max = colors.length - 1;
+        var color = colors[Math.floor(Math.random() * max)];
+        alert(color);
+        var finished = false;
+        var count = 0;
+        while (!finished) {
+            count++;
+            var playerChoice = prompt("I am thinking of one of these colors: \n \n".concat(colors.toString()).concat("\n\n")
+                    .concat("What color am I thinking of?"), "");
+            var results = check_guess(playerChoice, color);
+            if (results == false){
+                alert("You are incorrect\n")
+            }
+            else {
+                var numberOfGuesses = count.toString();
+                alert("You are correct!\nColor was: ".concat(color).concat("\nIt took you ").concat(numberOfGuesses)
+                        .concat(" guesses."));
+                finished = true;
+            }
+        }
+    }
+
+    function check_guess(playerChoice, color){
+        if (colors.indexOf(playerChoice)>=0){
+            if (playerChoice > color) {
+                return false
+            }
+            else if (playerChoice < color) {
+                return false
+            }
+            else {
+                document.body.style.background = color;
+                return true
+            }
+
+        }
+        else {
+            return false
+        }
+    }
+</script>
+
+</body>
+</html>
